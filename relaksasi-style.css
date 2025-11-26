@@ -1,0 +1,428 @@
+/* ============================================
+   RELAKSASI PAGE STYLES
+   ============================================ */
+
+.relax-hero {
+    padding: 140px 0 80px;
+    background: linear-gradient(135deg, var(--pastel-purple), var(--pastel-pink));
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.floating-particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: floatParticle 15s infinite ease-in-out;
+}
+
+.particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { left: 30%; animation-delay: 2s; }
+.particle:nth-child(3) { left: 50%; animation-delay: 4s; }
+.particle:nth-child(4) { left: 70%; animation-delay: 6s; }
+.particle:nth-child(5) { left: 90%; animation-delay: 8s; }
+
+@keyframes floatParticle {
+    0%, 100% { transform: translateY(0) scale(1); opacity: 0; }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.8; }
+    50% { transform: translateY(-100vh) scale(1.5); }
+}
+
+/* Breathing Section */
+.breathing-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.breathing-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.breathing-circle {
+    width: 300px;
+    height: 300px;
+    margin: 40px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breathing-circle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0.1;
+}
+
+.breathing-inner-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transition: all 1s ease-in-out;
+    position: absolute;
+}
+
+.breathing-circle.inhale .breathing-inner-circle {
+    width: 280px;
+    height: 280px;
+}
+
+.breathing-circle.hold .breathing-inner-circle {
+    width: 280px;
+    height: 280px;
+}
+
+.breathing-circle.exhale .breathing-inner-circle {
+    width: 150px;
+    height: 150px;
+}
+
+.breathing-text {
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.breathing-controls {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin: 32px 0;
+}
+
+.breathing-stats {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .stat-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-item .stat-label {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 8px;
+}
+
+/* Meditation Section */
+.meditation-section {
+    padding: 80px 0;
+    background: var(--bg-secondary);
+}
+
+.meditation-container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.timer-display {
+    margin: 40px 0;
+}
+
+.timer-circle {
+    width: 280px;
+    height: 280px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timer-svg {
+    transform: rotate(-90deg);
+}
+
+.timer-bg {
+    fill: none;
+    stroke: var(--bg-tertiary);
+    stroke-width: 10;
+}
+
+.timer-progress {
+    fill: none;
+    stroke: url(#timerGradient);
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 565.48;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 1s linear;
+}
+
+.timer-time {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.timer-presets {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    padding: 12px 24px;
+    border: 2px solid var(--bg-tertiary);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.preset-btn:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.preset-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: transparent;
+    color: white;
+}
+
+.timer-controls {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+/* Music Section */
+.music-section {
+    padding: 80px 0;
+    background: var(--bg-primary);
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+}
+
+.music-card {
+    background: var(--bg-secondary);
+    padding: 32px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+}
+
+.music-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.music-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+.music-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.music-card p {
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.music-player {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.play-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: all var(--transition-fast);
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.play-btn.playing {
+    animation: pulse 1.5s ease infinite;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+}
+
+.volume-slider {
+    flex: 1;
+    height: 4px;
+    border-radius: 2px;
+    outline: none;
+    background: var(--bg-tertiary);
+    appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    cursor: pointer;
+    border: none;
+}
+
+/* Quotes Section */
+.quotes-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-purple));
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: var(--radius-xl);
+}
+
+.quote-icon {
+    margin-bottom: 24px;
+}
+
+.quote-text {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.quote-author {
+    font-size: 18px;
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .relax-hero h1 {
+        font-size: 36px;
+    }
+    
+    .breathing-circle {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .breathing-inner-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .breathing-circle.inhale .breathing-inner-circle,
+    .breathing-circle.hold .breathing-inner-circle {
+        width: 230px;
+        height: 230px;
+    }
+    
+    .breathing-text {
+        font-size: 24px;
+    }
+    
+    .breathing-stats {
+        gap: 32px;
+    }
+    
+    .timer-circle {
+        width: 240px;
+        height: 240px;
+    }
+    
+    .timer-time {
+        font-size: 40px;
+    }
+    
+    .music-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .quote-text {
+        font-size: 22px;
+    }
+    
+    .breathing-controls,
+    .timer-controls {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .quote-container {
+        padding: 40px 24px;
+    }
+}

@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Psikologi - MindCare Mental Health Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="layanan-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (same as index.html) -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 12 C20 12, 15 15, 15 20 C15 25, 20 28, 20 28" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 12 C20 12, 25 15, 25 20 C25 25, 20 28, 20 28" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>MindCare</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Beranda</a></li>
+                <li><a href="index.html#about" class="nav-link">Tentang</a></li>
+                <li><a href="layanan.html" class="nav-link active">Layanan</a></li>
+                <li><a href="tes-mental.html" class="nav-link">Tes Mental</a></li>
+                <li><a href="artikel.html" class="nav-link">Artikel</a></li>
+                <li><a href="relaksasi.html" class="nav-link">Relaksasi</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="btn-primary" onclick="window.open('https://wa.me/6281234567890', '_blank')">Hubungi Kami</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="hero-content slide-up">
+                <h1>Layanan Psikologi Profesional</h1>
+                <p>Berbagai layanan kesehatan mental yang dirancang untuk membantu Anda mencapai kesejahteraan psikologis optimal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="services-filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="search-box">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="m21 21-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="searchInput" placeholder="Cari layanan..." />
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Semua</button>
+                    <button class="filter-btn" data-filter="konseling">Konseling</button>
+                    <button class="filter-btn" data-filter="tes">Tes Psikologi</button>
+                    <button class="filter-btn" data-filter="terapi">Terapi</button>
+                    <button class="filter-btn" data-filter="remaja">Remaja</button>
+                    <button class="filter-btn" data-filter="karier">Karier</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-grid-section">
+        <div class="container">
+            <div class="services-grid" id="servicesGrid">
+                <!-- Konseling Individu -->
+                <div class="service-card-detailed" data-category="konseling">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#E3F2FD"/>
+                            <path d="M50 30 C50 30, 36 40, 36 56 C36 66, 44 74, 50 74 C56 74, 64 66, 64 56 C64 40, 50 30, 50 30" fill="#2196F3"/>
+                        </svg>
+                    </div>
+                    <div class="service-badge">Popular</div>
+                    <h3>Konseling Individu</h3>
+                    <p>Sesi pribadi dengan psikolog profesional untuk membahas masalah personal, kecemasan, depresi, atau stres yang Anda alami.</p>
+                    <div class="service-features">
+                        <span>✓ 60 menit per sesi</span>
+                        <span>✓ Psikolog bersertifikat</span>
+                        <span>✓ Online/Offline</span>
+                        <span>✓ Rahasia terjamin</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.9/5 dari 1,240 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 200.000</span>
+                        <span class="price-note">/ sesi</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="openServiceDetail('konseling-individu')">Detail & Booking</button>
+                </div>
+
+                <!-- Konseling Keluarga -->
+                <div class="service-card-detailed" data-category="konseling">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#FCE4EC"/>
+                            <path d="M36 50 C36 50, 38 40, 50 40 C60 40, 64 50, 64 50 C64 60, 56 66, 50 66 C44 66, 36 60, 36 50" fill="#E91E63"/>
+                        </svg>
+                    </div>
+                    <h3>Konseling Keluarga</h3>
+                    <p>Membangun hubungan keluarga yang harmonis, mengatasi konflik, dan meningkatkan komunikasi antar anggota keluarga.</p>
+                    <div class="service-features">
+                        <span>✓ 90 menit per sesi</span>
+                        <span>✓ Untuk seluruh keluarga</span>
+                        <span>✓ Mediasi konflik</span>
+                        <span>✓ Pendekatan sistemik</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.8/5 dari 856 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 350.000</span>
+                        <span class="price-note">/ sesi</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="openServiceDetail('konseling-keluarga')">Detail & Booking</button>
+                </div>
+
+                <!-- Konseling Pasangan -->
+                <div class="service-card-detailed" data-category="konseling">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#F3E5F5"/>
+                            <path d="M30 50 Q30 30 50 30 Q70 30 70 50 Q70 65 50 75 Q30 65 30 50" fill="#9C27B0"/>
+                        </svg>
+                    </div>
+                    <h3>Konseling Pasangan</h3>
+                    <p>Terapi untuk pasangan yang menghadapi masalah hubungan, komunikasi, atau persiapan pernikahan dengan pendekatan profesional.</p>
+                    <div class="service-features">
+                        <span>✓ 90 menit per sesi</span>
+                        <span>✓ Terapis berpengalaman</span>
+                        <span>✓ Premarital counseling</span>
+                        <span>✓ Confidential</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.9/5 dari 672 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 400.000</span>
+                        <span class="price-note">/ sesi</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="openServiceDetail('konseling-pasangan')">Detail & Booking</button>
+                </div>
+
+                <!-- Konseling Remaja -->
+                <div class="service-card-detailed" data-category="konseling remaja">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#E1F5FE"/>
+                            <rect x="36" y="40" width="28" height="30" rx="4" fill="#03A9F4"/>
+                            <circle cx="50" cy="36" r="6" fill="#03A9F4"/>
+                        </svg>
+                    </div>
+                    <div class="service-badge">Recommended</div>
+                    <h3>Konseling Remaja</h3>
+                    <p>Pendampingan psikologi khusus remaja dalam menghadapi tantangan masa pertumbuhan, identitas diri, dan tekanan akademik.</p>
+                    <div class="service-features">
+                        <span>✓ 60 menit per sesi</span>
+                        <span>✓ Teen-friendly approach</span>
+                        <span>✓ Untuk usia 13-19 tahun</span>
+                        <span>✓ Parent consultation</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.9/5 dari 1,015 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 225.000</span>
+                        <span class="price-note">/ sesi</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="openServiceDetail('konseling-remaja')">Detail & Booking</button>
+                </div>
+
+                <!-- Tes Kepribadian MBTI -->
+                <div class="service-card-detailed" data-category="tes">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#F3E5F5"/>
+                            <circle cx="40" cy="44" r="12" fill="#9C27B0"/>
+                            <circle cx="60" cy="44" r="12" fill="#9C27B0"/>
+                            <path d="M30 64 Q50 76 70 64" stroke="#9C27B0" stroke-width="4" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="service-badge">Best Seller</div>
+                    <h3>Tes Kepribadian (MBTI)</h3>
+                    <p>Mengenal tipe kepribadian Anda dengan tes MBTI yang akurat. Membantu memahami diri, karier, dan hubungan interpersonal.</p>
+                    <div class="service-features">
+                        <span>✓ 93 pertanyaan</span>
+                        <span>✓ 16 tipe kepribadian</span>
+                        <span>✓ Laporan lengkap</span>
+                        <span>✓ Konsultasi hasil</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.8/5 dari 2,145 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 150.000</span>
+                        <span class="price-note">/ tes</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="window.location.href='tes-mental.html'">Mulai Tes</button>
+                </div>
+
+                <!-- Tes IQ -->
+                <div class="service-card-detailed" data-category="tes">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#FFF3E0"/>
+                            <text x="50" y="60" text-anchor="middle" font-size="30" font-weight="bold" fill="#FF9800">IQ</text>
+                        </svg>
+                    </div>
+                    <h3>Tes IQ</h3>
+                    <p>Ukur kecerdasan intelektual Anda dengan tes IQ standar yang valid dan reliable untuk berbagai keperluan.</p>
+                    <div class="service-features">
+                        <span>✓ Standar internasional</span>
+                        <span>✓ 60 soal</span>
+                        <span>✓ Sertifikat resmi</span>
+                        <span>✓ Konsultasi psikolog</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.7/5 dari 1,532 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 175.000</span>
+                        <span class="price-note">/ tes</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="window.location.href='tes-mental.html'">Mulai Tes</button>
+                </div>
+
+                <!-- Tes Minat & Bakat -->
+                <div class="service-card-detailed" data-category="tes karier">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#E8F5E9"/>
+                            <path d="M50 20 L60 45 L85 45 L65 60 L73 85 L50 68 L27 85 L35 60 L15 45 L40 45 Z" fill="#4CAF50"/>
+                        </svg>
+                    </div>
+                    <h3>Tes Minat & Bakat</h3>
+                    <p>Temukan potensi dan bakat terpendam Anda. Ideal untuk siswa SMA, mahasiswa, atau yang ingin career switch.</p>
+                    <div class="service-features">
+                        <span>✓ Holland Code (RIASEC)</span>
+                        <span>✓ Analisis mendalam</span>
+                        <span>✓ Rekomendasi karier</span>
+                        <span>✓ Career counseling</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.8/5 dari 1,328 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 200.000</span>
+                        <span class="price-note">/ tes</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="window.location.href='tes-mental.html'">Mulai Tes</button>
+                </div>
+
+                <!-- CBT Therapy -->
+                <div class="service-card-detailed" data-category="terapi">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#E8F5E9"/>
+                            <path d="M36 56 C36 56, 44 50, 50 50 C56 50, 64 56, 64 56" stroke="#4CAF50" stroke-width="4" fill="none"/>
+                            <circle cx="40" cy="40" r="4" fill="#4CAF50"/>
+                            <circle cx="60" cy="40" r="4" fill="#4CAF50"/>
+                        </svg>
+                    </div>
+                    <div class="service-badge">Recommended</div>
+                    <h3>Terapi CBT</h3>
+                    <p>Cognitive Behavioral Therapy untuk mengatasi kecemasan, depresi, trauma, dan pola pikir negatif dengan metode terbukti efektif.</p>
+                    <div class="service-features">
+                        <span>✓ 8-12 sesi program</span>
+                        <span>✓ Evidence-based</span>
+                        <span>✓ Terapis bersertifikat</span>
+                        <span>✓ Homework & tracking</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.9/5 dari 945 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 275.000</span>
+                        <span class="price-note">/ sesi</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="openServiceDetail('terapi-cbt')">Detail & Booking</button>
+                </div>
+
+                <!-- Konsultasi Klinis -->
+                <div class="service-card-detailed" data-category="konseling terapi">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#E1F5FE"/>
+                            <path d="M50 30 L50 70 M30 50 L70 50" stroke="#03A9F4" stroke-width="8" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>Konsultasi Klinis</h3>
+                    <p>Konsultasi mendalam untuk diagnosis dan penanganan gangguan psikologis seperti bipolar, OCD, PTSD, dan lainnya.</p>
+                    <div class="service-features">
+                        <span>✓ Psikolog klinis</span>
+                        <span>✓ Assessment lengkap</span>
+                        <span>✓ Diagnosis profesional</span>
+                        <span>✓ Treatment plan</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.9/5 dari 738 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 300.000</span>
+                        <span class="price-note">/ sesi</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="openServiceDetail('konsultasi-klinis')">Detail & Booking</button>
+                </div>
+
+                <!-- Mental Health Coaching -->
+                <div class="service-card-detailed" data-category="konseling">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#FFF3E0"/>
+                            <path d="M50 30 L55 45 L70 45 L58 54 L63 69 L50 60 L37 69 L42 54 L30 45 L45 45 Z" fill="#FF9800"/>
+                        </svg>
+                    </div>
+                    <h3>Mental Health Coaching</h3>
+                    <p>Program coaching untuk meningkatkan kesehatan mental, self-awareness, resiliensi, dan mencapai goals hidup Anda.</p>
+                    <div class="service-features">
+                        <span>✓ 6 sesi program</span>
+                        <span>✓ Goal-oriented</span>
+                        <span>✓ Action plan</span>
+                        <span>✓ Progress tracking</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.8/5 dari 612 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 250.000</span>
+                        <span class="price-note">/ sesi</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="openServiceDetail('mental-coaching')">Detail & Booking</button>
+                </div>
+
+                <!-- Meditasi & Mindfulness -->
+                <div class="service-card-detailed" data-category="terapi">
+                    <div class="service-image">
+                        <svg width="100" height="100" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" fill="#FFF3E0"/>
+                            <circle cx="50" cy="50" r="24" fill="#FF9800"/>
+                            <circle cx="50" cy="50" r="12" fill="#FFF3E0"/>
+                        </svg>
+                    </div>
+                    <h3>Meditasi & Mindfulness</h3>
+                    <p>Program meditasi terpandu untuk ketenangan pikiran, mengurangi stres, dan meningkatkan fokus serta kesejahteraan mental.</p>
+                    <div class="service-features">
+                        <span>✓ Guided meditation</span>
+                        <span>✓ Group/private class</span>
+                        <span>✓ 60 menit per sesi</span>
+                        <span>✓ Teknik pernapasan</span>
+                    </div>
+                    <div class="service-rating">⭐⭐⭐⭐⭐ <span>(4.7/5 dari 1,456 review)</span></div>
+                    <div class="service-price">
+                        <span class="price">Rp 150.000</span>
+                        <span class="price-note">/ sesi</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="window.location.href='relaksasi.html'">Lihat Program</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Butuh Bantuan Memilih Layanan?</h2>
+                <p>Tim kami siap membantu Anda menemukan layanan yang paling sesuai dengan kebutuhan Anda.</p>
+                <button class="btn-primary btn-large" onclick="window.open('https://wa.me/6281234567890?text=Halo, saya ingin konsultasi', '_blank')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Hubungi Kami via WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 12 C20 12, 15 15, 15 20 C15 25, 20 28, 20 28" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 12 C20 12, 25 15, 25 20 C25 25, 20 28, 20 28" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>MindCare</span>
+                    </div>
+                    <p>Pusat layanan psikologi profesional untuk kesehatan mental dan kesejahteraan Anda.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="contact-list">
+                        <li>📍 Jl. Kesehatan Mental No. 123, Jakarta</li>
+                        <li>📞 +62 812-3456-7890</li>
+                        <li>✉️ info@mindcare.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MindCare - Mental Health Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/6281234567890?text=Halo, saya ingin berkonsultasi" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open Chat">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h3>MindCare Assistant</h3>
+            <button class="chatbot-close" id="chatbotClose">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Halo! Ada layanan yang ingin Anda ketahui lebih lanjut?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Ketik pesan Anda...">
+            <button id="chatbotSend">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"/>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="layanan.js"></script>
+</body>
+</html>

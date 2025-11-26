@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tes Mental Health - MindCare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tes-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40">
+                    <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 12 C20 12, 15 15, 15 20 C15 25, 20 28, 20 28" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M20 12 C20 12, 25 15, 25 20 C25 25, 20 28, 20 28" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <span>MindCare</span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Beranda</a></li>
+                <li><a href="index.html#about" class="nav-link">Tentang</a></li>
+                <li><a href="layanan.html" class="nav-link">Layanan</a></li>
+                <li><a href="tes-mental.html" class="nav-link active">Tes Mental</a></li>
+                <li><a href="artikel.html" class="nav-link">Artikel</a></li>
+                <li><a href="relaksasi.html" class="nav-link">Relaksasi</a></li>
+                <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"/>
+                        <line x1="12" y1="1" x2="12" y2="3"/>
+                        <line x1="12" y1="21" x2="12" y2="23"/>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                        <line x1="1" y1="12" x2="3" y2="12"/>
+                        <line x1="21" y1="12" x2="23" y2="12"/>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                    </svg>
+                </button>
+                <button class="btn-primary" onclick="window.location.href='dashboard.html'">Dashboard Saya</button>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="test-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">🧠 Mental Health Assessment</span>
+                <h1>Tes Kesehatan Mental Gratis</h1>
+                <p>Kenali kondisi kesehatan mental Anda dengan tes yang valid dan reliable. Hasil langsung dengan rekomendasi profesional.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Categories -->
+    <section class="test-categories">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pilih Tes Yang <span class="gradient-text">Anda Butuhkan</span></h2>
+                <p class="section-description">Semua tes berbasis standar internasional dan telah tervalidasi</p>
+            </div>
+            
+            <div class="test-grid">
+                <!-- PHQ-9 Depression Test -->
+                <div class="test-card slide-up" data-test="phq9">
+                    <div class="test-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="#E3F2FD"/>
+                            <circle cx="22" cy="24" r="3" fill="#2196F3"/>
+                            <circle cx="38" cy="24" r="3" fill="#2196F3"/>
+                            <path d="M22 38 Q30 34 38 38" stroke="#2196F3" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Tes Depresi (PHQ-9)</h3>
+                    <p>Ukur tingkat depresi Anda dengan Patient Health Questionnaire-9</p>
+                    <div class="test-info">
+                        <span>📝 9 pertanyaan</span>
+                        <span>⏱️ 3-5 menit</span>
+                        <span>✅ Gratis</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="startTest('phq9')">Mulai Tes</button>
+                </div>
+
+                <!-- GAD-7 Anxiety Test -->
+                <div class="test-card slide-up" data-test="gad7">
+                    <div class="test-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="#FFF3E0"/>
+                            <circle cx="22" cy="24" r="3" fill="#FF9800"/>
+                            <circle cx="38" cy="24" r="3" fill="#FF9800"/>
+                            <path d="M20 36 L40 36" stroke="#FF9800" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3>Tes Kecemasan (GAD-7)</h3>
+                    <p>Evaluasi tingkat kecemasan dengan Generalized Anxiety Disorder-7</p>
+                    <div class="test-info">
+                        <span>📝 7 pertanyaan</span>
+                        <span>⏱️ 2-4 menit</span>
+                        <span>✅ Gratis</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="startTest('gad7')">Mulai Tes</button>
+                </div>
+
+                <!-- DASS-21 Stress Test -->
+                <div class="test-card slide-up" data-test="dass21">
+                    <div class="test-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="#FCE4EC"/>
+                            <circle cx="22" cy="24" r="2" fill="#E91E63"/>
+                            <circle cx="38" cy="24" r="2" fill="#E91E63"/>
+                            <path d="M18 36 Q30 42 42 36" stroke="#E91E63" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Tes Stres (DASS-21)</h3>
+                    <p>Ukur tingkat depresi, kecemasan, dan stres secara komprehensif</p>
+                    <div class="test-info">
+                        <span>📝 21 pertanyaan</span>
+                        <span>⏱️ 5-8 menit</span>
+                        <span>✅ Gratis</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="startTest('dass21')">Mulai Tes</button>
+                </div>
+
+                <!-- MBTI Personality Test -->
+                <div class="test-card slide-up" data-test="mbti">
+                    <div class="test-badge">Popular</div>
+                    <div class="test-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="#F3E5F5"/>
+                            <circle cx="22" cy="24" r="4" fill="#9C27B0"/>
+                            <circle cx="38" cy="24" r="4" fill="#9C27B0"/>
+                            <path d="M20 36 Q30 42 40 36" stroke="#9C27B0" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Tes Kepribadian (MBTI)</h3>
+                    <p>Temukan tipe kepribadian Anda dari 16 tipe MBTI</p>
+                    <div class="test-info">
+                        <span>📝 60 pertanyaan</span>
+                        <span>⏱️ 10-15 menit</span>
+                        <span>💎 Premium</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="startTest('mbti')">Mulai Tes</button>
+                </div>
+
+                <!-- Self-Esteem Test -->
+                <div class="test-card slide-up" data-test="self-esteem">
+                    <div class="test-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="#E8F5E9"/>
+                            <path d="M30 15 L35 25 L45 25 L37 32 L40 42 L30 35 L20 42 L23 32 L15 25 L25 25 Z" fill="#4CAF50"/>
+                        </svg>
+                    </div>
+                    <h3>Tes Self-Esteem</h3>
+                    <p>Ukur tingkat kepercayaan diri dan harga diri Anda</p>
+                    <div class="test-info">
+                        <span>📝 10 pertanyaan</span>
+                        <span>⏱️ 3-5 menit</span>
+                        <span>✅ Gratis</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="startTest('self-esteem')">Mulai Tes</button>
+                </div>
+
+                <!-- Love Language Test -->
+                <div class="test-card slide-up" data-test="love-language">
+                    <div class="test-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="#FCE4EC"/>
+                            <path d="M20 28 Q20 18 30 18 Q40 18 40 28 Q40 38 30 45 Q20 38 20 28" fill="#E91E63"/>
+                        </svg>
+                    </div>
+                    <h3>Tes Love Language</h3>
+                    <p>Temukan bahasa cinta Anda untuk hubungan yang lebih baik</p>
+                    <div class="test-info">
+                        <span>📝 30 pertanyaan</span>
+                        <span>⏱️ 8-10 menit</span>
+                        <span>✅ Gratis</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="startTest('love-language')">Mulai Tes</button>
+                </div>
+
+                <!-- Mental Health Check-in -->
+                <div class="test-card slide-up" data-test="checkin">
+                    <div class="test-badge">Daily</div>
+                    <div class="test-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="#E1F5FE"/>
+                            <path d="M30 15 L30 35 M30 35 L40 25" stroke="#03A9F4" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="30" cy="42" r="2" fill="#03A9F4"/>
+                        </svg>
+                    </div>
+                    <h3>Check-in Harian</h3>
+                    <p>Pantau kesehatan mental Anda setiap hari</p>
+                    <div class="test-info">
+                        <span>📝 5 pertanyaan</span>
+                        <span>⏱️ 1-2 menit</span>
+                        <span>✅ Gratis</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="startTest('checkin')">Mulai Check-in</button>
+                </div>
+
+                <!-- Burnout Test -->
+                <div class="test-card slide-up" data-test="burnout">
+                    <div class="test-icon">
+                        <svg width="60" height="60" viewBox="0 0 60 60">
+                            <circle cx="30" cy="30" r="25" fill="#FFF3E0"/>
+                            <circle cx="30" cy="30" r="18" fill="#FF9800"/>
+                            <circle cx="30" cy="30" r="10" fill="#FFF3E0"/>
+                        </svg>
+                    </div>
+                    <h3>Tes Burnout</h3>
+                    <p>Deteksi tanda-tanda kelelahan mental dan burnout</p>
+                    <div class="test-info">
+                        <span>📝 15 pertanyaan</span>
+                        <span>⏱️ 5-7 menit</span>
+                        <span>✅ Gratis</span>
+                    </div>
+                    <button class="btn-primary btn-block" onclick="startTest('burnout')">Mulai Tes</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Test Container (Hidden by default) -->
+    <div class="test-container" id="testContainer">
+        <div class="test-overlay"></div>
+        <div class="test-modal">
+            <button class="test-close" onclick="closeTest()">&times;</button>
+            
+            <div class="test-header">
+                <h2 id="testTitle">Tes Mental Health</h2>
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <span class="progress-text" id="progressText">Pertanyaan 1 dari 9</span>
+                </div>
+            </div>
+
+            <div class="test-body" id="testBody">
+                <!-- Questions will be inserted here by JavaScript -->
+            </div>
+
+            <div class="test-navigation">
+                <button class="btn-secondary" id="prevBtn" onclick="previousQuestion()" disabled>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"/>
+                    </svg>
+                    Sebelumnya
+                </button>
+                <button class="btn-primary" id="nextBtn" onclick="nextQuestion()" disabled>
+                    Selanjutnya
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Container (Hidden by default) -->
+    <div class="result-container" id="resultContainer">
+        <div class="result-overlay"></div>
+        <div class="result-modal">
+            <button class="result-close" onclick="closeResult()">&times;</button>
+            
+            <div class="result-icon" id="resultIcon">
+                <!-- Icon will be inserted by JavaScript -->
+            </div>
+            
+            <h2 id="resultTitle">Hasil Tes Anda</h2>
+            <div class="result-score" id="resultScore"></div>
+            <div class="result-category" id="resultCategory"></div>
+            <div class="result-description" id="resultDescription"></div>
+            
+            <div class="result-recommendations" id="resultRecommendations"></div>
+            
+            <div class="result-actions">
+                <button class="btn-primary btn-large" onclick="saveResult()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+                        <polyline points="17 21 17 13 7 13 7 21"/>
+                        <polyline points="7 3 7 8 15 8"/>
+                    </svg>
+                    Simpan ke Dashboard
+                </button>
+                <button class="btn-secondary btn-large" onclick="window.open('https://wa.me/6281234567890?text=Halo, saya ingin konsultasi', '_blank')">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Konsultasi Psikolog
+                </button>
+                <button class="btn-outline btn-large" onclick="retakeTest()">Ulangi Tes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <div class="info-icon">🔒</div>
+                    <h3>Privasi Terjamin</h3>
+                    <p>Semua hasil tes bersifat rahasia dan hanya Anda yang bisa melihatnya</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">✅</div>
+                    <h3>Tervalidasi</h3>
+                    <p>Menggunakan standar internasional yang sudah terbukti valid dan reliable</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">🎯</div>
+                    <h3>Hasil Akurat</h3>
+                    <p>Analisis mendalam dengan rekomendasi yang disesuaikan dengan kondisi Anda</p>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">💚</div>
+                    <h3>Gratis Selamanya</h3>
+                    <p>Mayoritas tes kami gratis untuk membantu kesehatan mental masyarakat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg width="40" height="40" viewBox="0 0 40 40">
+                            <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 12 C20 12, 15 15, 15 20 C15 25, 20 28, 20 28" fill="none" stroke="currentColor" stroke-width="2"/>
+                            <path d="M20 12 C20 12, 25 15, 25 20 C25 25, 20 28, 20 28" fill="none" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>MindCare</span>
+                    </div>
+                    <p>Pusat layanan psikologi profesional untuk kesehatan mental dan kesejahteraan Anda.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="contact-list">
+                        <li>📍 Jl. Kesehatan Mental No. 123, Jakarta</li>
+                        <li>📞 +62 812-3456-7890</li>
+                        <li>✉️ info@mindcare.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 MindCare - Mental Health Center. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/6281234567890?text=Halo, saya ingin berkonsultasi" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Open Chat">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-header">
+            <h3>MindCare Assistant</h3>
+            <button class="chatbot-close" id="chatbotClose">×</button>
+        </div>
+        <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Ada yang bisa saya bantu dengan tes mental health?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbotInput" placeholder="Ketik pesan Anda...">
+            <button id="chatbotSend">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="22" y1="2" x2="11" y2="13"/>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="chatbot.js"></script>
+    <script src="tes-mental.js"></script>
+</body>
+</html>
