@@ -7,6 +7,41 @@ const navbar = document.getElementById('navbar');
 const themeToggle = document.getElementById('themeToggle');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
+const pageTransition = document.getElementById('pageTransition');
+
+// ============================================
+// PAGE TRANSITION
+// ============================================
+function initPageTransition() {
+    // Hide transition on page load
+    if (pageTransition) {
+        setTimeout(() => {
+            pageTransition.classList.remove('active');
+        }, 300);
+    }
+    
+    // Add transition to all internal links
+    document.querySelectorAll('a[href]:not([href^="#"]):not([target="_blank"])').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Check if it's an internal link
+            if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+                e.preventDefault();
+                
+                // Show transition
+                if (pageTransition) {
+                    pageTransition.classList.add('active');
+                }
+                
+                // Navigate after animation
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 500);
+            }
+        });
+    });
+}
 
 // ============================================
 // THEME TOGGLE (Dark/Light Mode)
@@ -36,27 +71,46 @@ if (themeToggle) {
 // NAVBAR SCROLL EFFECT
 // ============================================
 let lastScroll = 0;
+let navbarVisible = true;
+let navbarTimeout = null;
+
+function showNavbar() {
+    if (!navbarVisible) {
+        navbar.style.transform = 'translateY(0)';
+        navbarVisible = true;
+    }
+    if (navbarTimeout) clearTimeout(navbarTimeout);
+    // Hide again after 3s jika tidak di klik/touch
+    navbarTimeout = setTimeout(hideNavbar, 3000);
+}
+
+function hideNavbar() {
+    if (navbarVisible) {
+        navbar.style.transform = 'translateY(-100%)';
+        navbarVisible = false;
+    }
+}
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
     if (navbar) {
         if (currentScroll > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
-        // Auto-hide navbar on scroll down (optional)
-        if (currentScroll > lastScroll && currentScroll > 200) {
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            navbar.style.transform = 'translateY(0)';
-        }
+        // Show navbar saat scroll
+        showNavbar();
     }
-    
     lastScroll = currentScroll;
 });
+
+// Show navbar saat klik/touch
+navbar.addEventListener('mouseenter', showNavbar);
+navbar.addEventListener('touchstart', showNavbar);
+navbar.addEventListener('click', showNavbar);
+// Hide navbar saat mouse leave
+navbar.addEventListener('mouseleave', hideNavbar);
 
 // ============================================
 // MOBILE MENU TOGGLE
@@ -419,6 +473,7 @@ function updateActiveNavLink() {
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    initPageTransition();
     initTestimonialSlider();
     createScrollToTop();
     updateActiveNavLink();
