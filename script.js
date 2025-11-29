@@ -80,8 +80,10 @@ function showNavbar() {
         navbarVisible = true;
     }
     if (navbarTimeout) clearTimeout(navbarTimeout);
-    // Hide again after 3s jika tidak di klik/touch
-    navbarTimeout = setTimeout(hideNavbar, 3000);
+    // Hide again after 3s jika tidak di klik/touch (hanya di desktop)
+    if (window.innerWidth > 768) {
+        navbarTimeout = setTimeout(hideNavbar, 3000);
+    }
 }
 
 function hideNavbar() {
@@ -99,8 +101,10 @@ window.addEventListener('scroll', () => {
         } else {
             navbar.classList.remove('scrolled');
         }
-        // Show navbar saat scroll
-        showNavbar();
+        // Show navbar saat scroll (hanya di desktop)
+        if (window.innerWidth > 768) {
+            showNavbar();
+        }
     }
     lastScroll = currentScroll;
 });
@@ -115,10 +119,43 @@ navbar.addEventListener('mouseleave', hideNavbar);
 // ============================================
 // MOBILE MENU TOGGLE
 // ============================================
+const menuOverlay = document.createElement('div');
+menuOverlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+`;
+document.body.appendChild(menuOverlay);
+
 if (hamburger && navMenu) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        if (navMenu.classList.contains('active')) {
+            menuOverlay.style.opacity = '1';
+            menuOverlay.style.pointerEvents = 'all';
+            document.body.style.overflow = 'hidden';
+        } else {
+            menuOverlay.style.opacity = '0';
+            menuOverlay.style.pointerEvents = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Close menu when clicking on overlay
+    menuOverlay.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        menuOverlay.style.opacity = '0';
+        menuOverlay.style.pointerEvents = 'none';
+        document.body.style.overflow = '';
     });
     
     // Close menu when clicking on a link
@@ -127,6 +164,9 @@ if (hamburger && navMenu) {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            menuOverlay.style.opacity = '0';
+            menuOverlay.style.pointerEvents = 'none';
+            document.body.style.overflow = '';
         });
     });
     
@@ -135,6 +175,9 @@ if (hamburger && navMenu) {
         if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            menuOverlay.style.opacity = '0';
+            menuOverlay.style.pointerEvents = 'none';
+            document.body.style.overflow = '';
         }
     });
 }
